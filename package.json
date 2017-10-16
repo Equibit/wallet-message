@@ -1,0 +1,9 @@
+{
+  "name": "bitmessage",
+  "version": "0.0.1",
+  "description": "BitMessage client for Equibit Portfolio Wallet",
+  "main": "index.js",
+  "repository": "https://github.com/Equibit/wallet-message",
+  "author": "EquibitGroup <info@equibitgroup.com>",
+  "license": "MIT"
+}
