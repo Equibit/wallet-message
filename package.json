@@ -5,5 +5,36 @@
   "main": "index.js",
   "repository": "https://github.com/Equibit/wallet-message",
   "author": "EquibitGroup <info@equibitgroup.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "scripts": {
+    "build": "make build",
+    "lint": "standard --fix",
+    "lint:fix": "standard --fix",
+    "mocha": "nyc mocha -u tdd --timeout 999999 --colors test/ --recursive",
+    "preversion": "npm run lint && npm test",
+    "release:patch": "npm version patch && make publish",
+    "release:minor": "npm version minor && make publish",
+    "release:major": "npm version major && make publish",
+    "test": "npm run mocha"
+  },
+  "standard": {
+    "env": [
+      "mocha"
+    ]
+  },
+  "dependencies": {
+    "ramda": "^0.25.0",
+    "safe-buffer": "^5.1.1",
+    "tx-builder": "^0.7.0",
+    "typeforce": "^1.11.1",
+    "varuint-bitcoin": "^1.0.4"
+  },
+  "devDependencies": {
+    "assert": "^1.4.1",
+    "browserify": "^14.4.0",
+    "mocha": "^4.0.1",
+    "nyc": "^11.0.3",
+    "standard": "^10.0.2",
+    "uglify-es": "^3.1.3"
+  }
 }
