@@ -1,5 +1,5 @@
 {
-  "name": "bitmessage",
+  "name": "@equibit/wallet-message",
   "version": "0.0.1",
   "description": "BitMessage client for Equibit Portfolio Wallet",
   "main": "index.js",
@@ -31,6 +31,8 @@
   },
   "devDependencies": {
     "assert": "^1.4.1",
+    "bip39": "^2.4.0",
+    "bitcoinjs-lib": "^3.2.0",
     "browserify": "^14.4.0",
     "mocha": "^4.0.1",
     "nyc": "^11.0.3",
