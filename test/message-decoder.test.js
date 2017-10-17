@@ -10,14 +10,20 @@ describe('message-decoder', function () {
   const buffer = Buffer.from(messageHex, 'hex')
 
   describe('decodeMessage', function () {
-    it('should decode a message', function () {
-      let decoded
-      try {
-        decoded = decodeMessage(buffer)
-      } catch (e) {
-        console.log(e)
-      }
-      assert.equal(decoded[0].type, fixture.decoded.type)
+    let decoded
+    try {
+      decoded = decodeMessage(buffer)
+    } catch (e) {
+      console.log(e)
+    }
+    const decodedMessage = decoded[0]
+    Object.keys(decodedMessage).forEach(key => {
+      it(`should decode "${key}" from message`, function () {
+        const value = ['sender_public_key', 'signature'].indexOf(key) !== -1 ? decodedMessage[key].toString('hex') : decodedMessage[key]
+        // console.log(`decodedMessage[${key}] = ${decodedMessage[key]}`)
+        assert.equal(value, fixture.decoded[key])
+      })
     })
+    console.log(`Buffer left = ${decoded[1]}`)
   })
 })

@@ -3,10 +3,11 @@
  *
  * Bitmessage structure:
  * - type, ENUM ["bid", "ask"], varlength string
- * - seconds, uint64
- * - nanoseconds, uint32
+ * - timestamp, uint64
+ * - timestamp_nanoseconds, uint32
  * - sender_public_key, varlength string
- * - data, varlength string
+ * - payload, varlength string
+ * - nonce, uint64
  * - signature, varlength string
  */
 
@@ -17,15 +18,16 @@ const {
   readVarSlice
 } = require('tx-builder/src/buffer-read')
 
-// decodeMessage :: Buffer -> [MessageBuffer, Buffer]
+// decodeMessage :: Buffer -> [Message, Buffer]
 const decodeMessage = buffer =>
 (
   compose([
     addProp('type', readVarSlice),
-    addProp('seconds', readUInt64),
-    addProp('nanoseconds', readUInt32),
+    addProp('timestamp', readUInt64),
+    addProp('timestamp_nanoseconds', readUInt32),
     addProp('sender_public_key', readVarSlice),
-    addProp('data', readVarSlice),
+    addProp('nonce', readUInt64),
+    addProp('payload', readVarSlice),
     addProp('signature', readVarSlice)
   ])({}, buffer)
 )
