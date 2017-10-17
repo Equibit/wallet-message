@@ -6,20 +6,15 @@ const fixtures = require('./fixtures/message-hex-decoded')
 // const fixture = fixtures[0]
 
 describe('message-decoder', function () {
-
-  for(let i = 0; i < fixtures.length; i++) {
+  for (let i = 0; i < fixtures.length; i++) {
     const fixture = fixtures[i]
     const messageHex = fixture.hex
     const buffer = Buffer.from(messageHex, 'hex')
 
     describe(`decodeMessage ${i}, type=${fixture.decoded.type}`, function () {
-      let decoded
-      try {
-        decoded = decodeMessage(buffer)
-      } catch (e) {
-        console.log(e)
-      }
-      const decodedMessage = decoded[0]
+      const [decodedMessage, bufferLeft] = decodeMessage(buffer)
+      // console.log(`decodedMessage = ${JSON.stringify(decodedMessage)}`)
+
       Object.keys(decodedMessage).forEach(key => {
         it(`should decode "${key}" from message`, function () {
           const value = ['sender_public_key', 'signature'].indexOf(key) !== -1 ? decodedMessage[key].toString('hex') : decodedMessage[key]
@@ -27,7 +22,7 @@ describe('message-decoder', function () {
           assert.equal(value, fixture.decoded[key])
         })
       })
-      console.log(`Buffer left = ${decoded[1]}`)
+      assert.equal(bufferLeft.length, 0)
     })
   }
 })

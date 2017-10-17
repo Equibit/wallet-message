@@ -15,19 +15,19 @@ module.exports = [{
 }, {
   hex: '034269648047e659000000005298671a210200c925fb73bfe5e5a9633aae1f25733b3a2ccd13c506bcc7ca7ada1f8496892793220000000000004a7b227175616e74697479223a20353030302c227072696365223a2022302e333333222c2266696c6c5f6f725f6b696c6c223a20226e6f222c226475726174696f6e223a2038363430307d46304402205dd2cf23a07efc9ffbd2a5907d49fd8fa59dd011118262afdba6ea0fafddc53c02205bdaa594160d4216d7b994378b7ca7ed49869870a9c259cd6f21907c812415c9',
   decoded: {
-    "hash": "00001096e99f812267f42d41348f71dedfb053879e34c038c40e982a7a741294",
-    "type": "Bid",
-    "timestamp": 1508263808,
-    "timestamp_nanoseconds": 442996818,
-    "sender_public_key": "0200c925fb73bfe5e5a9633aae1f25733b3a2ccd13c506bcc7ca7ada1f84968927",
-    "nonce": 8851,
-    "payload": "{\"quantity\": 5000,\"price\": \"0.333\",\"fill_or_kill\": \"no\",\"duration\": 86400}",
-    "signature": "304402205dd2cf23a07efc9ffbd2a5907d49fd8fa59dd011118262afdba6ea0fafddc53c02205bdaa594160d4216d7b994378b7ca7ed49869870a9c259cd6f21907c812415c9"},
+    'hash': '00001096e99f812267f42d41348f71dedfb053879e34c038c40e982a7a741294',
+    'type': 'Bid',
+    'timestamp': 1508263808,
+    'timestamp_nanoseconds': 442996818,
+    'sender_public_key': '0200c925fb73bfe5e5a9633aae1f25733b3a2ccd13c506bcc7ca7ada1f84968927',
+    'nonce': 8851,
+    'payload': '{"quantity": 5000,"price": "0.333","fill_or_kill": "no","duration": 86400}',
+    'signature': '304402205dd2cf23a07efc9ffbd2a5907d49fd8fa59dd011118262afdba6ea0fafddc53c02205bdaa594160d4216d7b994378b7ca7ed49869870a9c259cd6f21907c812415c9'},
   message: {
-    "type": "Bid",
-    "timestamp": 1508263808,
-    "timestamp_nanoseconds": 442996818,
-    "sender_public_key": "0200c925fb73bfe5e5a9633aae1f25733b3a2ccd13c506bcc7ca7ada1f84968927",
-    "payload": "{\"quantity\": 5000,\"price\": \"0.333\",\"fill_or_kill\": \"no\",\"duration\": 86400}"
+    'type': 'Bid',
+    'timestamp': 1508263808,
+    'timestamp_nanoseconds': 442996818,
+    'sender_public_key': '0200c925fb73bfe5e5a9633aae1f25733b3a2ccd13c506bcc7ca7ada1f84968927',
+    'payload': '{"quantity": 5000,"price": "0.333","fill_or_kill": "no","duration": 86400}'
   }
 }]
