@@ -2,11 +2,11 @@
  * Bitmessage Builder
  *
  * Bitmessage structure:
- * - type, ENUM ["bid", "ask"], varlength string
- * - seconds, uint64
- * - nanoseconds, uint32
+ * - type, ENUM ["Bid", "Ask"], varlength string
+ * - timestamp, uint64
+ * - timestamp_nanoseconds, uint32
  * - sender_public_key, varlength string
- * - data, varlength string
+ * - payload, varlength string
  * - signature, varlength string
  */
 
@@ -31,23 +31,23 @@ const EMPTY_BUFFER = Buffer.allocUnsafe(0)
  * @return {Buffer}
  */
 // buildTx :: Tx -> Buffer
-const buildMessage = tx => {
+const buildMessage = message => {
   typeforce({
     type: 'String',
-    seconds: 'Number',
-    nanoseconds: 'Number',
+    timestamp: 'Number',
+    timestamp_nanoseconds: 'Number',
     sender_public_key: 'String',
-    vout: 'Array',
-    locktime: 'Number'
-  }, tx)
+    payload: 'String',
+  }, message)
   return compose([
-    prop('type', bufferVarSlice),
-    prop('seconds', bufferUInt64),
-    prop('nanoseconds', bufferUInt32),
-    prop('sender_public_key', bufferVarSlice),
-    prop('data', bufferVarSlice),
-    prop('signature', bufferVarSlice)
-  ])(tx, EMPTY_BUFFER)
+    prop('type', bufferVarSlice('ascii')),
+    prop('timestamp', bufferUInt64),
+    prop('timestamp_nanoseconds', bufferUInt32),
+    prop('sender_public_key', bufferVarSlice('hex')),
+    prop('nonce', bufferUInt64),
+    prop('payload', bufferVarSlice('ascii')),
+    // prop('signature', bufferVarSlice('hex'))
+  ])(message, EMPTY_BUFFER)
 }
 
 module.exports = {

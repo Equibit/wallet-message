@@ -7,6 +7,9 @@ const { hashFromBuffer } = require('tx-builder')
 
 describe('message-decoder', function () {
   for (let i = 0; i < fixtures.length; i++) {
+    if (!fixtures[i].hex) {
+      continue
+    }
     const fixture = fixtures[i]
     const messageHex = fixture.hex
     const buffer = Buffer.from(messageHex, 'hex')
