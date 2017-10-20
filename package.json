@@ -27,16 +27,19 @@
     "safe-buffer": "^5.1.1",
     "tx-builder": "^0.7.3",
     "typeforce": "^1.11.1",
-    "varuint-bitcoin": "^1.0.4"
+    "varuint-bitcoin": "^1.0.4",
+    "worker-task-runner": "^0.0.2"
   },
   "devDependencies": {
     "assert": "^1.4.1",
     "bip39": "^2.4.0",
     "bitcoinjs-lib": "^3.2.0",
     "browserify": "^14.4.0",
+    "data.task": "^3.1.1",
     "mocha": "^4.0.1",
     "nyc": "^11.0.3",
     "standard": "^10.0.2",
+    "steal": "1.5.2",
     "uglify-es": "^3.1.3"
   }
 }
