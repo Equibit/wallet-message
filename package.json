@@ -28,7 +28,7 @@
     "tx-builder": "^0.7.3",
     "typeforce": "^1.11.1",
     "varuint-bitcoin": "^1.0.4",
-    "worker-task-runner": "^0.0.2"
+    "worker-task-runner": "0.0.2"
   },
   "devDependencies": {
     "assert": "^1.4.1",

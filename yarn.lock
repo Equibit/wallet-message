@@ -2949,7 +2949,7 @@ wordwrap@~1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/wordwrap/-/wordwrap-1.0.0.tgz#27584810891456a4171c8d0226441ade90cbcaeb"
 
-worker-task-runner@^0.0.2:
+worker-task-runner@0.0.2:
   version "0.0.2"
   resolved "https://registry.yarnpkg.com/worker-task-runner/-/worker-task-runner-0.0.2.tgz#f1f09736d965a686a2c84452dd9c407deaad632d"
   dependencies:
