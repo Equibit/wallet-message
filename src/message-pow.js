@@ -1,16 +1,22 @@
 const Buffer = require('safe-buffer').Buffer
+const { bufferUInt64, bufferVarSliceBuffer } = require('tx-builder/src/buffer-build')
 const { pow, signBuffer } = require('tx-builder')
-const { bufferUInt64 } = require('tx-builder/src/buffer-build')
-const { buildMessage } = require('../src/message-builder')
 
-const messagePow = (data, keyPair) => {
-  const dataBuffer = buildMessage(data)
+const { buildMessage } = require('./message-builder')
 
-  const signature = signBuffer(keyPair)(dataBuffer)
-  const messageBuffer = Buffer.concat([dataBuffer, signature])
+const messagePow = (messageData, keyPair, difficulty) => {
+  const message = buildMessage(messageData)
 
-  const nonce = pow(3)(messageBuffer)
-  const messageWithNonce = Buffer.concat([signature, bufferUInt64(nonce)])
+  const signature = signBuffer(keyPair)(message)
+  const messageSigned = Buffer.concat([message, bufferVarSliceBuffer(signature)])
+
+  const nonce = pow(difficulty)(messageSigned)
+  // console.log(`nonce = ${nonce}`)
+  const messageWithNonce = Buffer.concat([messageSigned, bufferUInt64(nonce)])
+
+  // console.log('message         ', message.toString('hex'))
+  // console.log('messageSigned   ', messageSigned.toString('hex'))
+  // console.log('messageWithNonce', messageWithNonce.toString('hex'))
 
   return messageWithNonce
 }

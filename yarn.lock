@@ -2819,9 +2819,9 @@ tty-browserify@~0.0.0:
   version "0.0.0"
   resolved "https://registry.yarnpkg.com/tty-browserify/-/tty-browserify-0.0.0.tgz#a157ba402da24e9bf957f9aa69d524eed42901a6"
 
-tx-builder@^0.7.3:
-  version "0.7.3"
-  resolved "https://registry.yarnpkg.com/tx-builder/-/tx-builder-0.7.3.tgz#6c30a1e9eec0d0f31f6fcd7f8566516b686d1c6b"
+tx-builder@^0.8.0:
+  version "0.8.0"
+  resolved "https://registry.yarnpkg.com/tx-builder/-/tx-builder-0.8.0.tgz#196eaf9127ac9afbb50b8a002b20fe3db15ad8e9"
   dependencies:
     bip39 "^2.3.1"
     bitcoinjs-lib "^3.1.1"

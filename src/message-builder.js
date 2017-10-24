@@ -44,9 +44,7 @@ const buildMessage = message => {
     prop('timestamp', bufferUInt64),
     prop('timestamp_nanoseconds', bufferUInt32),
     prop('sender_public_key', bufferVarSlice('hex')),
-    prop('nonce', bufferUInt64),
     prop('payload', bufferVarSlice('ascii')),
-    // prop('signature', bufferVarSlice('hex'))
   ])(message, EMPTY_BUFFER)
 }
 

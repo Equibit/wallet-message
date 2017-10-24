@@ -26,9 +26,9 @@ const decodeMessage = buffer =>
     addProp('timestamp', readUInt64),
     addProp('timestamp_nanoseconds', readUInt32),
     addProp('sender_public_key', readVarSlice),
-    addProp('nonce', readUInt64),
     addProp('payload', readVarSlice),
-    addProp('signature', readVarSlice)
+    addProp('signature', readVarSlice),
+    addProp('nonce', readUInt64)
   ])({}, buffer)
 )
 

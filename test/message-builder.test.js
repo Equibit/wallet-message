@@ -11,10 +11,10 @@ describe('message-builder', function () {
   fixture.message.keyPair = keyPair
 
   describe('buildMessage', function () {
-    it('should build a message hex (w/o signature)', function () {
+    it('should build a message hex (w/o signature and nonce 16)', function () {
       const buffer = buildMessage(fixture.message)
       // TODO: ignore signature part for now:
-      assert.equal(buffer.toString('hex'), fixture.hex.slice(0, 266))
+      assert.equal(buffer.toString('hex'), fixture.hex.slice(0, (266 - 16)))
     })
   })
 })

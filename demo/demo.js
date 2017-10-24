@@ -1,15 +1,19 @@
-const { create, runTask } = require('worker-task-runner/src/helpers')
-const execTask = require('worker-task-runner/src/utils/exec')
+const Buffer = require('safe-buffer').Buffer
+const { pow, signBuffer } = require('tx-builder')
+const { bufferUInt64 } = require('tx-builder/src/buffer-build')
+const { buildMessage } = require('../src/message-builder')
 
-// Mapper task will be executed per element:
-const data = [1, 2, 3, 4, 5]
+const messagePow = (data, keyPair) => {
+  const dataBuffer = buildMessage(data)
 
-const workerUrl = 'worker-task-runner/src/worker'
+  const signature = signBuffer(keyPair)(dataBuffer)
+  const messageBuffer = Buffer.concat([dataBuffer, signature])
 
-// Define the main app: create a worker and run a task:
-const app =
-  create(workerUrl)
-    .chain(worker => runTask(worker, 'demo/task')(data))
+  const nonce = pow(3)(messageBuffer)
+  const messageWithNonce = Buffer.concat([signature, bufferUInt64(nonce)])
 
-// Execute the application (see `data.task`):
-execTask(app)
+  return messageWithNonce
+}
+
+const dataBuffer = buildMessage(data)
+
