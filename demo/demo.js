@@ -1,5 +1,5 @@
-const messagePow= require('../src/message-pow')
-const fixtureNode = require('../test/fixtures/hdnode')
+const { messagePow } = require('../dist/wallet-message')
+const fixtureNode = require('../test/fixtures/hdnode.build')
 const keyPair = fixtureNode.keyPair
 
 const messageData = {
