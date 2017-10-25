@@ -11,12 +11,7 @@ const messagePow = (messageData, keyPair, difficulty) => {
   const messageSigned = Buffer.concat([message, bufferVarSliceBuffer(signature)])
 
   const nonce = pow(difficulty)(messageSigned)
-  // console.log(`nonce = ${nonce}`)
   const messageWithNonce = Buffer.concat([messageSigned, bufferUInt64(nonce)])
-
-  // console.log('message         ', message.toString('hex'))
-  // console.log('messageSigned   ', messageSigned.toString('hex'))
-  // console.log('messageWithNonce', messageWithNonce.toString('hex'))
 
   return messageWithNonce
 }

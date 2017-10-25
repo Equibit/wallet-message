@@ -37,14 +37,14 @@ const buildMessage = message => {
     timestamp: 'Number',
     timestamp_nanoseconds: 'Number',
     sender_public_key: 'String',
-    payload: 'String',
+    payload: 'String'
   }, message)
   return compose([
     prop('type', bufferVarSlice('ascii')),
     prop('timestamp', bufferUInt64),
     prop('timestamp_nanoseconds', bufferUInt32),
     prop('sender_public_key', bufferVarSlice('hex')),
-    prop('payload', bufferVarSlice('ascii')),
+    prop('payload', bufferVarSlice('ascii'))
   ])(message, EMPTY_BUFFER)
 }
 

@@ -11,7 +11,6 @@ console.log(`length = ${buffer.toString('hex').length}`)
 
 console.log(fixture.hex.slice(0, 266))
 
-
 // timestamp:
 // 8047e65900000000
 

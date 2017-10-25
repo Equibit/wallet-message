@@ -20,6 +20,10 @@
   "standard": {
     "env": [
       "mocha"
+    ],
+    "ignore": [
+      "/demo/",
+      "/dist/"
     ]
   },
   "dependencies": {

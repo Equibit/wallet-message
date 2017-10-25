@@ -14,7 +14,7 @@ describe('message-decoder', function () {
     const messageHex = fixture.hex
     const buffer = Buffer.from(messageHex, 'hex')
 
-    describe(`decodeMessage ${i}, type=${fixture.decoded.type}`, function () {
+    describe(`decodeMessage ${i}, type=${fixture.decoded.type}` + (fixture.comment ? `. ${fixture.comment}` : ''), function () {
       const [decodedMessage, bufferLeft] = decodeMessage(buffer)
       // console.log(`decodedMessage = ${JSON.stringify(decodedMessage)}`)
 
