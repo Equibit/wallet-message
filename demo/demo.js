@@ -1,19 +1,14 @@
-const Buffer = require('safe-buffer').Buffer
-const { pow, signBuffer } = require('tx-builder')
-const { bufferUInt64 } = require('tx-builder/src/buffer-build')
-const { buildMessage } = require('../src/message-builder')
+const messagePow= require('../src/message-pow')
+const fixtureNode = require('../test/fixtures/hdnode')
+const keyPair = fixtureNode.keyPair
 
-const messagePow = (data, keyPair) => {
-  const dataBuffer = buildMessage(data)
-
-  const signature = signBuffer(keyPair)(dataBuffer)
-  const messageBuffer = Buffer.concat([dataBuffer, signature])
-
-  const nonce = pow(3)(messageBuffer)
-  const messageWithNonce = Buffer.concat([signature, bufferUInt64(nonce)])
-
-  return messageWithNonce
+const messageData = {
+  'type': 'Bid',
+  'timestamp': 1508263808,
+  'timestamp_nanoseconds': 442996818,
+  'sender_public_key': '',
+  'payload': '{"quantity": 5000,"price": "0.333","fill_or_kill": "no","duration": 86400}'
 }
 
-const dataBuffer = buildMessage(data)
-
+const message = messagePow(messageData, keyPair, 3)
+console.log(`message = ${message.toString('hex')}`)

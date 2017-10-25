@@ -1,8 +1,8 @@
 build:
 	rm -rf dist
 	mkdir dist
-	./node_modules/.bin/browserify index.js --standalone TxBuilder -o dist/wallet-message.js
-	./node_modules/.bin/browserify index.js --standalone TxBuilder | ./node_modules/.bin/uglifyjs > dist/wallet-message.min.js
+	./node_modules/.bin/browserify index.js --standalone WalletMessage -o dist/wallet-message.js
+	./node_modules/.bin/browserify index.js --standalone WalletMessage | ./node_modules/.bin/uglifyjs > dist/wallet-message.min.js
 publish:
 	make build
 	-git branch -D release
