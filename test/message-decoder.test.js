@@ -35,7 +35,7 @@ describe('hashFromBuffer', function () {
     const fixture = fixtures[1]
     const messageHex = fixture.hex
     const buffer = Buffer.from(messageHex, 'hex')
-    const hash = hashFromBuffer(buffer)
+    const hash = hashFromBuffer({})(buffer)
     assert.equal(hash, fixture.decoded.hash)
   })
 })

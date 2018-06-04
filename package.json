@@ -29,7 +29,7 @@
   "dependencies": {
     "ramda": "^0.25.0",
     "safe-buffer": "^5.1.1",
-    "tx-builder": "^0.8.0",
+    "tx-builder": "^0.15.0",
     "typeforce": "^1.11.1",
     "varuint-bitcoin": "^1.0.4",
     "worker-task-runner": "0.0.2"

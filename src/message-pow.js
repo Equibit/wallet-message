@@ -4,13 +4,13 @@ const { pow, signBuffer } = require('tx-builder')
 
 const { buildMessage } = require('./message-builder')
 
-const messagePow = (messageData, keyPair, difficulty) => {
+const messagePow = (messageData, keyPair, difficulty, options) => {
   const message = buildMessage(messageData)
 
   const signature = signBuffer(keyPair)(message)
   const messageSigned = Buffer.concat([message, bufferVarSliceBuffer(signature)])
 
-  const nonce = pow(difficulty)(messageSigned)
+  const nonce = pow(difficulty, options)(messageSigned)
   const messageWithNonce = Buffer.concat([messageSigned, bufferUInt64(nonce)])
 
   return messageWithNonce
