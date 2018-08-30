@@ -242,13 +242,24 @@ base64-js@^1.0.2:
   version "1.2.1"
   resolved "https://registry.yarnpkg.com/base64-js/-/base64-js-1.2.1.tgz#a91947da1f4a516ea38e5b4ec0ec3773675e0886"
 
-bech32@0.0.3:
-  version "0.0.3"
-  resolved "https://registry.yarnpkg.com/bech32/-/bech32-0.0.3.tgz#736747c4a6531c5d8937d0400498de30e93b2f9c"
+bech32@^1.1.2:
+  version "1.1.3"
+  resolved "https://registry.yarnpkg.com/bech32/-/bech32-1.1.3.tgz#bd47a8986bbb3eec34a56a097a84b8d3e9a2dfcd"
 
-bigi@^1.1.0, bigi@^1.4.0:
-  version "1.4.2"
-  resolved "https://registry.yarnpkg.com/bigi/-/bigi-1.4.2.tgz#9c665a95f88b8b08fc05cfd731f561859d725825"
+bindings@^1.3.0:
+  version "1.3.0"
+  resolved "https://registry.yarnpkg.com/bindings/-/bindings-1.3.0.tgz#b346f6ecf6a95f5a815c5839fc7cdb22502f1ed7"
+
+bip32@^1.0.0, bip32@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/bip32/-/bip32-1.0.2.tgz#982e2ad2cae6fc6a2f53dda3e6c3be9364674b28"
+  dependencies:
+    bs58check "^2.1.1"
+    create-hash "^1.2.0"
+    create-hmac "^1.1.7"
+    tiny-secp256k1 "^1.0.0"
+    typeforce "^1.11.5"
+    wif "^2.0.6"
 
 bip39@^2.3.1, bip39@^2.4.0:
   version "2.4.0"
@@ -270,27 +281,31 @@ bitcoin-ops@^1.3.0:
   version "1.3.0"
   resolved "https://registry.yarnpkg.com/bitcoin-ops/-/bitcoin-ops-1.3.0.tgz#6b126b585537bc679b02ed499f14450cffc37e13"
 
-bitcoinjs-lib@^3.1.1, bitcoinjs-lib@^3.2.0:
-  version "3.2.0"
-  resolved "https://registry.yarnpkg.com/bitcoinjs-lib/-/bitcoinjs-lib-3.2.0.tgz#23d435523b26b15ce58d539172c1c2cbc83141a1"
+bitcoin-ops@^1.4.0:
+  version "1.4.1"
+  resolved "https://registry.yarnpkg.com/bitcoin-ops/-/bitcoin-ops-1.4.1.tgz#e45de620398e22fd4ca6023de43974ff42240278"
+
+bitcoinjs-lib@^4.0.1:
+  version "4.0.1"
+  resolved "https://registry.yarnpkg.com/bitcoinjs-lib/-/bitcoinjs-lib-4.0.1.tgz#0ce01f8eb25e5da6fb7db8550eb05ee7561f8439"
   dependencies:
-    bech32 "0.0.3"
-    bigi "^1.4.0"
+    bech32 "^1.1.2"
+    bip32 "^1.0.0"
     bip66 "^1.1.0"
-    bitcoin-ops "^1.3.0"
+    bitcoin-ops "^1.4.0"
     bs58check "^2.0.0"
     create-hash "^1.1.0"
     create-hmac "^1.1.3"
-    ecurve "^1.0.0"
     merkle-lib "^2.0.10"
     pushdata-bitcoin "^1.0.1"
     randombytes "^2.0.1"
-    safe-buffer "^5.0.1"
+    safe-buffer "^5.1.1"
+    tiny-secp256k1 "^1.0.0"
     typeforce "^1.11.3"
     varuint-bitcoin "^1.0.4"
     wif "^2.0.1"
 
-bn.js@^4.0.0, bn.js@^4.1.0, bn.js@^4.1.1, bn.js@^4.4.0:
+bn.js@^4.0.0, bn.js@^4.1.0, bn.js@^4.1.1, bn.js@^4.11.8, bn.js@^4.4.0:
   version "4.11.8"
   resolved "https://registry.yarnpkg.com/bn.js/-/bn.js-4.11.8.tgz#2cde09eb5ee341f484746bb0309b3253b1b1442f"
 
@@ -456,6 +471,14 @@ bs58check@^2.1.0:
   dependencies:
     bs58 "^4.0.0"
     create-hash "^1.1.0"
+
+bs58check@^2.1.1:
+  version "2.1.2"
+  resolved "https://registry.yarnpkg.com/bs58check/-/bs58check-2.1.2.tgz#53b018291228d82a5aa08e7d796fdafda54aebfc"
+  dependencies:
+    bs58 "^4.0.0"
+    create-hash "^1.1.0"
+    safe-buffer "^5.1.2"
 
 buffer-xor@^1.0.3:
   version "1.0.3"
@@ -655,9 +678,30 @@ create-hash@^1.1.0, create-hash@^1.1.2:
     ripemd160 "^2.0.0"
     sha.js "^2.4.0"
 
+create-hash@^1.2.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/create-hash/-/create-hash-1.2.0.tgz#889078af11a63756bcfb59bd221996be3a9ef196"
+  dependencies:
+    cipher-base "^1.0.1"
+    inherits "^2.0.1"
+    md5.js "^1.3.4"
+    ripemd160 "^2.0.1"
+    sha.js "^2.4.0"
+
 create-hmac@^1.1.0, create-hmac@^1.1.2, create-hmac@^1.1.3, create-hmac@^1.1.4:
   version "1.1.6"
   resolved "https://registry.yarnpkg.com/create-hmac/-/create-hmac-1.1.6.tgz#acb9e221a4e17bdb076e90657c42b93e3726cf06"
+  dependencies:
+    cipher-base "^1.0.3"
+    create-hash "^1.1.0"
+    inherits "^2.0.1"
+    ripemd160 "^2.0.0"
+    safe-buffer "^5.0.1"
+    sha.js "^2.4.8"
+
+create-hmac@^1.1.7:
+  version "1.1.7"
+  resolved "https://registry.yarnpkg.com/create-hmac/-/create-hmac-1.1.7.tgz#69170c78b3ab957147b2b8b04572e47ead2243ff"
   dependencies:
     cipher-base "^1.0.3"
     create-hash "^1.1.0"
@@ -847,15 +891,21 @@ duplexer2@^0.1.2, duplexer2@~0.1.0, duplexer2@~0.1.2:
   dependencies:
     readable-stream "^2.0.2"
 
-ecurve@^1.0.0:
-  version "1.0.5"
-  resolved "https://registry.yarnpkg.com/ecurve/-/ecurve-1.0.5.tgz#d148e8fe50a674f983bb5bae09da0ea23e10535e"
-  dependencies:
-    bigi "^1.1.0"
-
 elliptic@^6.0.0:
   version "6.4.0"
   resolved "https://registry.yarnpkg.com/elliptic/-/elliptic-6.4.0.tgz#cac9af8762c85836187003c8dfe193e5e2eae5df"
+  dependencies:
+    bn.js "^4.4.0"
+    brorand "^1.0.1"
+    hash.js "^1.0.0"
+    hmac-drbg "^1.0.0"
+    inherits "^2.0.1"
+    minimalistic-assert "^1.0.0"
+    minimalistic-crypto-utils "^1.0.0"
+
+elliptic@^6.4.0:
+  version "6.4.1"
+  resolved "https://registry.yarnpkg.com/elliptic/-/elliptic-6.4.1.tgz#c2d0b7776911b86722c632c3c06c60f2f819939a"
   dependencies:
     bn.js "^4.4.0"
     brorand "^1.0.1"
@@ -1953,6 +2003,10 @@ mute-stream@0.0.5:
   version "0.0.5"
   resolved "https://registry.yarnpkg.com/mute-stream/-/mute-stream-0.0.5.tgz#8fbfabb0a98a253d3184331f9e8deb7372fac6c0"
 
+nan@^2.10.0:
+  version "2.11.0"
+  resolved "https://registry.yarnpkg.com/nan/-/nan-2.11.0.tgz#574e360e4d954ab16966ec102c0c049fd961a099"
+
 natural-compare@^1.4.0:
   version "1.4.0"
   resolved "https://registry.yarnpkg.com/natural-compare/-/natural-compare-1.4.0.tgz#4abebfeed7541f2c27acfb29bdbbd15c8d5ba4f7"
@@ -2496,6 +2550,10 @@ safe-buffer@^5.0.1, safe-buffer@^5.1.0, safe-buffer@^5.1.1, safe-buffer@~5.1.0, 
   version "5.1.1"
   resolved "https://registry.yarnpkg.com/safe-buffer/-/safe-buffer-5.1.1.tgz#893312af69b2123def71f57889001671eeb2c853"
 
+safe-buffer@^5.1.2:
+  version "5.1.2"
+  resolved "https://registry.yarnpkg.com/safe-buffer/-/safe-buffer-5.1.2.tgz#991ec69d296e0313747d59bdfd2b745c35f8828d"
+
 "semver@2 || 3 || 4 || 5", semver@^5.3.0:
   version "5.4.1"
   resolved "https://registry.yarnpkg.com/semver/-/semver-5.4.1.tgz#e059c09d8571f0540823733433505d3a2f00b18e"
@@ -2814,6 +2872,16 @@ timers-browserify@^1.0.1:
   dependencies:
     process "~0.11.0"
 
+tiny-secp256k1@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/tiny-secp256k1/-/tiny-secp256k1-1.0.0.tgz#4a7fc0e83617058ce70f5e7926788d93ebcaf854"
+  dependencies:
+    bindings "^1.3.0"
+    bn.js "^4.11.8"
+    create-hmac "^1.1.7"
+    elliptic "^6.4.0"
+    nan "^2.10.0"
+
 to-arraybuffer@^1.0.0:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/to-arraybuffer/-/to-arraybuffer-1.0.1.tgz#7d229b1fcc637e466ca081180836a7aabff83f43"
@@ -2834,12 +2902,13 @@ tty-browserify@~0.0.0:
   version "0.0.0"
   resolved "https://registry.yarnpkg.com/tty-browserify/-/tty-browserify-0.0.0.tgz#a157ba402da24e9bf957f9aa69d524eed42901a6"
 
-tx-builder@^0.15.0:
-  version "0.15.0"
-  resolved "https://registry.yarnpkg.com/tx-builder/-/tx-builder-0.15.0.tgz#cd38f78585171a6756ea2ca6da2976d31f153f5b"
+tx-builder@^0.16.0:
+  version "0.16.0"
+  resolved "https://registry.yarnpkg.com/tx-builder/-/tx-builder-0.16.0.tgz#d9c5f1fde22f33bd6bb2cc189584a2adbe6fb5f5"
   dependencies:
+    bip32 "^1.0.2"
     bip39 "^2.3.1"
-    bitcoinjs-lib "^3.1.1"
+    bitcoinjs-lib "^4.0.1"
     bs58check "^2.1.0"
     js-sha3 "^0.7.0"
     ramda "^0.24.1"
@@ -2860,6 +2929,10 @@ typedarray@^0.0.6, typedarray@~0.0.5:
 typeforce@^1.11.1, typeforce@^1.11.3:
   version "1.11.5"
   resolved "https://registry.yarnpkg.com/typeforce/-/typeforce-1.11.5.tgz#ddbbf322e5022014cd7b8f4facb63ead3c80da09"
+
+typeforce@^1.11.5:
+  version "1.12.0"
+  resolved "https://registry.yarnpkg.com/typeforce/-/typeforce-1.12.0.tgz#ca40899919f1466d7819e37be039406beb912a2e"
 
 uglify-es@^3.1.5:
   version "3.1.5"
@@ -2943,7 +3016,7 @@ which@^1.2.4, which@^1.2.9:
   dependencies:
     isexe "^2.0.0"
 
-wif@^2.0.1:
+wif@^2.0.1, wif@^2.0.6:
   version "2.0.6"
   resolved "https://registry.yarnpkg.com/wif/-/wif-2.0.6.tgz#08d3f52056c66679299726fade0d432ae74b4704"
   dependencies:
